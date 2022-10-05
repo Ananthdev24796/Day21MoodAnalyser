@@ -1,12 +1,10 @@
 package com.bridgelabz;
 
 
-/*
-Given a Message, ability
-to analyse and respond
-Happy or Sad Mood - Create MoodAnalyser Object - Call analyseMood function with message as
-parameter and return Happy or Sad Mood
- */
+    /*
+    * UC2
+    * Handle Exception if User Provides Invalid Mood - Like NULL
+    */
 public class MoodAnalyser {
 
                     String message;
@@ -19,13 +17,20 @@ public class MoodAnalyser {
                     }
 
                     public String analyseMood(){
-                        if(this.message.contains("sad"))
+                        try{
+                            if(this.message.contains("sad"))
+                            {
+                                return "sad";
+                            }
+                            else {
+                                return "happy";
+                            }
+                        }
+                        catch(NullPointerException e)
                         {
-                            return "sad";
+                                return "happy";
                         }
-                        else {
-                            return "happy";
-                        }
+
 
                     }
 
